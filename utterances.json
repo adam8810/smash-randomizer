@@ -1,0 +1,42 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "ChooseCharacterIntent",
+      "samples": [
+        "choose a character",
+        "choose a player",
+        "randomize",
+        "to shuffle"
+      ],
+      "slots": []
+    },
+    {
+      "name": "ChooseCharacterNumberIntent",
+      "samples": [
+        "pick {Count} characters",
+        "choose {Count}",
+        "pick {Count}",
+        "get {Count} characters"
+      ],
+      "slots": [
+        {
+          "name": "Count",
+          "type": "AMAZON.NUMBER",
+          "samples": []
+        }
+      ]
+    }
+  ]
+}
