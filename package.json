@@ -1,0 +1,6 @@
+{
+  "devDependencies": {},
+  "dependencies": {
+    "alexa-sdk": "^1.0.25"
+  }
+}

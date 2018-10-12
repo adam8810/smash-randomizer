@@ -42,30 +42,47 @@ const characters = [
 ];
 
 const handlers = {
+
+    //'Unhandled': function (err) {
+    //  console.error (err);
+    //  return this.emit (':tell', 'err');
+    //},
+    //'SessionEndedRequest': function (a,b,c) {
+    //  return this.emit (':tell', 'session ended');
+    //},
     'LaunchRequest': function () {
         this.emit('ChooseCharacterIntent');
     },
     'ChooseCharacterIntent': function () {
-      const img = {
-        smallImageUrl: 'https://s3.amazonaws.com/ambooth-smasher/mario.png',
-        largeImageUrl: 'https://s3.amazonaws.com/ambooth-smasher/mario.png'
+      //const img = {
+      //  smallImageUrl: 'https://s3.amazonaws.com/ambooth-smasher/mario.png',
+      //  largeImageUrl: 'https://s3.amazonaws.com/ambooth-smasher/mario.png'
 
-      };
+      //};
+
       const rand = Math.floor (Math.random () * characters.length);
       const text = 'You\'re playing as ' + characters[rand];
 
-        this.response.speak (text)
-        .renderTemplate ({
-          type: 'list',
-          title: 'Smasher',
-          listItems: [
-            {
-              image: img,
-              textContent: 'Mario'
-            }
-          ]
-        });
-        this.emit (':responseReady');
+      //const list = new Alexa.templateBuilders.ListItemBuilder ();
+      //list.addItem ('https://s3.amazonaws.com/ambooth-smasher/mario.png', 'mario', 'mario');
+      //list.addItem ('https://s3.amazonaws.com/ambooth-smasher/mario.png', 'mario2', 'mario2');
+
+      //const t = new Alexa.templateBuilders.ListTemplate1Builder ();
+      //const template = t.setTitle('My List').setListItems(list.build()).build(); 
+
+      //const template = {
+      //  "type": "ListTemplate2",
+      //  "token": "string",
+      //  "backButton": "HIDDEN",
+      //  "title": "string",
+      //  "listItems": list.build()
+      //};
+
+      //console.log(template);
+
+      this.response.speak (text)
+      //.renderTemplate (template);
+      this.emit (':responseReady');
     },
     'ChooseCharacterNumberIntent': function () {
         const count = this.event.request.intent.slots.Count.value;
